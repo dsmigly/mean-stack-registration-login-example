@@ -1,0 +1,29 @@
+﻿<h1>Questões </h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label for="question">Question</label>
+            <input type="text" id="question" class="form-control" ng-model="vm.question.question" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveQuestion()">Salvar</button>
+            <button class="btn btn-danger" ng-click="vm.deleteQuestion()">Deletar</button>           
+        </div>
+    </form>
+    <form method="GET">
+        <div class="form-showAll">
+            <button class="btn" ng-click="vm.getAll()">Mostrar Todos</button>
+        </div>
+    </form>
+    <div class="question-saved">
+        <br></br>
+        <table border="2">
+            <tr>
+                <th>&emsp;Questão&emsp;</th>
+            </tr>
+            <tr ng-repeat="x in vm.allQuestion">
+                <td>{{x}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
